@@ -1,16 +1,15 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Header from "./Components/Header";
-
-import Systam from "./pages/systam";
+import Main from "./pages/planets";
+import data from "./data/data.json";
 
 function App() {
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Navigate to="/systam" />} />
-        <Route path="/systam" element={<Systam />} />
-        <Route path="/systam/:name" element={<Systam />} />
+        <Route path="/" element={<Navigate to="/planets/mercury" />} />
+        <Route path="/planets/:name" element={<Main />} />
       </Routes>
     </>
   );

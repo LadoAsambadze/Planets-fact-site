@@ -8,7 +8,6 @@ export default function Header() {
   function show() {
     setActive(!active);
   }
-  console.log(active);
 
   return (
     <>
@@ -18,51 +17,73 @@ export default function Header() {
         </h1>
         <div className="w-full flex justify-evenly items-center dr-row mt-[39px] hidden md:inline-flex">
           <Link
-            to="/systam"
+            to="/planets/mercury"
             className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]"
           >
             mercury
           </Link>
-          <Link className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]">
-            venera
+          <Link
+            to="/planets/venus"
+            className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]"
+          >
+            venus
           </Link>
-          <Link className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]">
+          <Link
+            to="/planets/earth"
+            className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]"
+          >
             earth
           </Link>
-          <Link className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]">
+          <Link
+            to="/planets/mars"
+            className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]"
+          >
             mars
           </Link>
-          <Link className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]">
+          <Link
+            to="/planets/jupiter"
+            className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]"
+          >
             jupiter
           </Link>
-          <Link className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]">
+          <Link
+            to="/planets/saturn"
+            className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]"
+          >
             saturn
           </Link>
-          <Link className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]">
+          <Link
+            to="/planets/uranus"
+            className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]"
+          >
             uranus
           </Link>
-          <Link className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]">
+          <Link
+            to="/planets/neptune"
+            className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]"
+          >
             neptune
           </Link>
         </div>
-
-        <img
-          onClick={show}
-          src={buttonMobile}
-          className="button-for-list cursor-pointer md:hidden "
-          alt="button"
-        />
+        <Link to="/planets/menu">
+          <img
+            onClick={show}
+            src={buttonMobile}
+            className="button-for-list cursor-pointer md:hidden "
+            alt="button"
+          />
+        </Link>
       </div>
       <div className="h-px opacity-20 mix-blend-normal w-full bg-white"></div>
       {active ? (
-        <div className="md:hidden">
+        <div className="md:hidden ">
           <div className="pt-[24px] px-[24px]  w-full">
             <div className="flex items-center flex-row justify-between w-full mt-[20px]">
               <div className="flex items-center justify-center">
                 <div className="bg-[#DEF4FC] w-[20px] h-[20px] rounded-full"></div>
                 <Link
                   onClick={show}
-                  to="/systam"
+                  to="/planets/mercury"
                   className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
                 >
                   mercury
@@ -74,7 +95,10 @@ export default function Header() {
             <div className="flex items-center flex-row justify-between w-full mt-[20px]">
               <div className="flex items-center justify-center">
                 <div className="bg-[#F7CC7F] w-[20px] h-[20px] rounded-full"></div>
-                <Link className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]">
+                <Link
+                  to="/planets/venus"
+                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                >
                   venus
                 </Link>
               </div>
@@ -85,7 +109,10 @@ export default function Header() {
             <div className="flex items-center flex-row justify-between w-full mt-[20px]">
               <div className="flex items-center justify-center">
                 <div className="bg-[#545BFE] w-[20px] h-[20px] rounded-full"></div>
-                <Link className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]">
+                <Link
+                  to="/planets/earth"
+                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                >
                   earth
                 </Link>
               </div>
@@ -96,7 +123,10 @@ export default function Header() {
             <div className="flex items-center flex-row justify-between w-full mt-[20px]">
               <div className="flex items-center justify-center">
                 <div className="bg-[#FF6A45] w-[20px] h-[20px] rounded-full"></div>
-                <Link className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]">
+                <Link
+                  to="/planets/mars"
+                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                >
                   mars
                 </Link>
               </div>
@@ -107,7 +137,10 @@ export default function Header() {
             <div className="flex items-center flex-row justify-between w-full mt-[20px]">
               <div className="flex items-center justify-center">
                 <div className="bg-[#ECAD7A] w-[20px] h-[20px] rounded-full"></div>
-                <Link className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]">
+                <Link
+                  to="/planets/jupiter"
+                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                >
                   jupiter
                 </Link>
               </div>
@@ -118,7 +151,10 @@ export default function Header() {
             <div className="flex items-center flex-row justify-between w-full mt-[20px]">
               <div className="flex items-center justify-center">
                 <div className="bg-[#FCCB6B] w-[20px] h-[20px] rounded-full"></div>
-                <Link className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]">
+                <Link
+                  to="/planets/saturn"
+                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                >
                   saturn
                 </Link>
               </div>
@@ -129,7 +165,10 @@ export default function Header() {
             <div className="flex items-center flex-row justify-between w-full mt-[20px]">
               <div className="flex items-center justify-center">
                 <div className="bg-[#FCCB6B] w-[20px] h-[20px] rounded-full"></div>
-                <Link className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]">
+                <Link
+                  to="/planets/uranus"
+                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                >
                   uranus
                 </Link>
               </div>
@@ -144,7 +183,10 @@ export default function Header() {
             er justify-center"
               >
                 <div className="bg-[#497EFA] w-[20px] h-[20px] rounded-full"></div>
-                <Link className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]">
+                <Link
+                  to="/planets/neptune"
+                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                >
                   neptune
                 </Link>
               </div>

@@ -1,25 +1,24 @@
 import { useState } from "react";
-import Mercury from "../../public/assets/planet-mercury.svg";
+import { useParams } from "react-router-dom";
 
-export default function Systam() {
+import planets from "../data/data.json";
+
+export default function Main() {
   const [active, setActive] = useState("overview");
+  const { name } = useParams();
+  const planet = planets.find((p) => p.name.toLowerCase() === name);
 
   function forOverview() {
     const name = "overview";
     setActive(name);
-    console.log(active);
   }
-
   function forStructure() {
     const name = "structure";
     setActive(name);
-    console.log(active);
   }
-
   function forSurface() {
     const name = "surface";
     setActive(name);
-    console.log(active);
   }
 
   return (
@@ -46,39 +45,58 @@ export default function Systam() {
       </div>
       <div className="h-[1px] bg-white opacity-20 w-full md:hidden "></div>
 
-      <div className="flex flex-col justify-center items-center px-[24px]">
+      <div className="flex flex-col justify-center items-center px-[24px] ">
         <img
           className="mt-[95px] md:mt-[146px] w-[40%] md:w-[15%]"
-          src={Mercury}
+          src={
+            active === "overview"
+              ? planet.images.planet
+              : active === "structure"
+              ? planet.images.internal
+              : active === "surface"
+              ? planet.images.planet && planet.images.geology
+              : null
+          }
         />
-
         <div className="flex flex-col mt-[98px] justify-center md:mt-[130px] w-full md:flex-row md:flex-col">
           <div className="w-full flex justify-center  md:flex-row md:justify-between">
             <div className="md:w-[50%]">
               <h1 className="text-[40px] font-[antonio] uppercase text-white text-center font-normal leading-[52px] md:text-[48px] md:leading-[62px] md:text-left">
-                Mercury
+                {planet.name}
               </h1>
               <p className="text-[#FFFFFF] font-[spartan] text-[11px] leading-[22px] font-normal text-center mt-[16px] md:text-left ">
-                Mercury is the smallest planet in the Solar System and the
-                closest to the Sun. Its orbit around the Sun takes 87.97 Earth
-                days, the shortest of all the Sun's planets. Mercury is one of
-                four terrestrial planets in the Solar System, and is a rocky
-                body like Earth.
+                {active === "overview"
+                  ? planet.overview.content
+                  : active === "structure"
+                  ? planet.structure.content
+                  : active === "surface"
+                  ? planet.geology.content
+                  : null}
               </p>
               <div className="flex flex-row justify-center mt-[32px] w-full md:justify-start">
                 <p className="ml-[4px] text-white text-[12px] leading-[25px] opacity-50">
                   Source:
                 </p>
-                <a className="ml-[4px] text-white text-[12px] leading-[25px] opacity-50 md:text-left  ">
+                <a
+                  href={
+                    active === "overview"
+                      ? planet.overview.source
+                      : active === "structure"
+                      ? planet.structure.source
+                      : active === "surface"
+                      ? planet.geology.source
+                      : null
+                  }
+                  className="ml-[4px] text-white text-[12px] leading-[25px] opacity-50 md:text-left  "
+                >
                   Wikipedia
                 </a>
-
                 <img />
               </div>
             </div>
-
             <div className="flex flex-col hidden w-[280px] md:block  w-[50%] pl-[70px]">
               <div
+                onClick={forOverview}
                 className="flex flex-row px-[24px] pt-[9px] pb-[13px]  items-center  w-full border-[1px] border-solid mt-[8px] py-[8px]
               pl-[20px] pr-[161px]"
               >
@@ -93,6 +111,7 @@ export default function Systam() {
                 </p>
               </div>
               <div
+                onClick={forStructure}
                 className="flex flex-row px-[24px] pt-[9px] pb-[13px]  items-center  w-full border-[1px] border-solid mt-[8px] py-[8px]
               pl-[20px] pr-[87px]"
               >
@@ -107,6 +126,7 @@ export default function Systam() {
                 </p>
               </div>
               <div
+                onClick={forSurface}
                 className="flex flex-row px-[24px] pt-[9px] pb-[13px]  items-center  w-full border-[1px] border-solid mt-[8px] py-[8px]
               pl-[20px] pr-[105px]"
               >
@@ -122,7 +142,6 @@ export default function Systam() {
               </div>
             </div>
           </div>
-
           <div className="flex flex-col w-full mt-[20px] md:flex-row md:justify-between">
             <div
               className="flex flex-row px-[24px] pt-[9px] pb-[13px] justify-between items-center  border-[1px] border-solid mt-[8px] 
