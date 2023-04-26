@@ -11,12 +11,13 @@
   font-style: normal;
 }
 
+
 body {
   width: 100%;
   min-height: 100vh;
   background-color: #070724;
-  background-image: url(./assets/background-stars.svg);
-  padding-top: 16px;
+  background-image: url(../assets/background-stars.svg);
+
   padding-bottom: 67px;
   background-repeat: no-repeat;
   background-size: 100%;
