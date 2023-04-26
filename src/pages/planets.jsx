@@ -23,7 +23,7 @@ export default function Main() {
 
   return (
     <>
-      <div className="px-[24px] pt-[20px] w-full flex flex-row justify-evenly items-center md:hidden    ">
+      <div className="px-[24px] pt-[20px] w-full flex flex-row justify-evenly items-center md:hidden     ">
         <div
           className="border-[#070724] border-b-4   cursor-pointer"
           style={{
@@ -37,10 +37,12 @@ export default function Main() {
             overview
           </p>
         </div>
-        <div className="border-[#070724] border-b-4   cursor-pointer"
-         style={{
-          borderColor: active === "structure" ? planet.color : null,
-        }}>
+        <div
+          className="border-[#070724] border-b-4   cursor-pointer"
+          style={{
+            borderColor: active === "structure" ? planet.color : null,
+          }}
+        >
           <p
             onClick={forStructure}
             className="text-white font-[spartan] text-[9px] leading-[10px] uppercase tracking-[1.92px] font-bold pb-[17px]"
@@ -48,10 +50,12 @@ export default function Main() {
             structure
           </p>
         </div>
-        <div className="border-[#070724] border-b-4  h cursor-pointer"
-         style={{
-          borderColor: active === "surface" ? planet.color : null,
-        }}>
+        <div
+          className="border-[#070724] border-b-4  h cursor-pointer"
+          style={{
+            borderColor: active === "surface" ? planet.color : null,
+          }}
+        >
           <p
             onClick={forSurface}
             className="text-white font-[spartan] text-[9px] leading-[10px] uppercase tracking-[1.92px] font-bold pb-[17px] "
@@ -62,7 +66,7 @@ export default function Main() {
       </div>
       <div className="h-[1px] bg-white opacity-20 w-full md:hidden "></div>
 
-      <div className="flex flex-col justify-center items-center px-[24px] xl:px-[165px] xl:pt-[126px] xl:pb-[56px] xl:flex-row xl:justify-start xl:items-start ">
+      <div className="flex flex-col   justify-center items-center px-[24px] xl:px-[165px] xl:pt-[126px] xl:pb-[56px] xl:flex-row xl:justify-start xl:items-start ">
         <div className="h-[304px] xl:hidden md:h-[460px] flex justify-center items-center ">
           <img
             className=" max-w-[80%] max-h-[80%] xl:hidden  "
