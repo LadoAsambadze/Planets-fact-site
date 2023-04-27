@@ -69,7 +69,7 @@ export default function Main() {
       <div className="flex flex-col absolute justify-center items-center px-6 pb-9 xl:px-40 xl:pt-4 xl:pb-[56px] xl:flex-row xl:justify-start xl:items-start ">
         <div className="h-[304px] xl:hidden md:h-[460px] flex flex-col justify-center items-center ">
           <img
-            className=" w-3/4  xl:hidden  "
+            className=" w-1/2 md:w-3/4 xl:hidden  "
             src={
               active === "overview"
                 ? planet.images.planet
@@ -81,7 +81,7 @@ export default function Main() {
             }
           />
           <img
-            className="w-24  translate-y-1/2 md:w-40 md:translate-y-2/3 xl:w-40 absolute xl:translate-y-full "
+            className="w-20  translate-y-2/3 md:w-40 md:translate-y-2/3 xl:w-40 absolute xl:translate-y-full "
             src={active === "surface" ? planet.images.geology : null}
           />
         </div>
@@ -89,7 +89,7 @@ export default function Main() {
           <div className="w-full flex justify-center   md:flex-row md:justify-between xl:flex-row ">
             <div className=" hidden  xl:w-full xl:h-[400px] xl:flex xl:flex-col xl:justify-center xl:items-center">
               <img
-                className=" w-1/2   "
+                className="   "
                 src={
                   active === "overview"
                     ? planet.images.planet
