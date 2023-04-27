@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import buttonMobile from "../../public/assets/icon-hamburger.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import arrow from "../../public/assets/icon-chevron.svg";
 
 export default function Header() {
@@ -13,17 +13,18 @@ export default function Header() {
   return (
     <>
       <div
-        className="flex justify-between md:justify-center md:flex-col items-center px-[24px] md:px-[51px] pb-[17px] md:pb-[22px] xl:pt-0
-      xl:flex-row  xl:pr-[41px] xl:pb-[27px] xl:pl-[32px] xl:items-center  xl:justify-evenly md:pt-[32px]"
+        className="flex w-full justify-between md:justify-center md:flex-col items-center px-6 md:px-14 pb-4 md:pb-5 xl:pt-0
+      xl:flex-row  xl:pr-10 xl:pb-7 xl:pl-8 xl:items-center  xl:justify-evenly  z-20 md:pt-8 relative"
+        style={{ position: active ? "fixed" : "relative" }}
       >
-        <h1 className="text-[#FFFFFF] font-[antonio, sans-serif] text-[28px] leading-9 font-[400] tracking-[-1px] w-full md:text-center xl:text-left xl:mt-[15px]">
+        <h1 className="text-[#FFFFFF] font-[antonio, sans-serif] text-3xl leading-9 font-normal tracking-[-1px] w-full md:text-center xl:text-left xl:mt-4">
           THE PLANETS
         </h1>
-        <div className="w-full  justify-evenly items-center flex-row  hidden md:inline-flex md:mt-[39px]  xl:mt-0 ">
-          <div className="flex flex-col border-t-4 hover:border-[#419EBB]   border-[#070724]">
+        <div className=" hidden  md:w-full  md:justify-evenly md:items-center  md:inline-flex md:mt-10  xl:mt-0 ">
+          <div className="flex flex-col border-t-4 hover:border-[#419EBB]   border-[#070724] ">
             <Link
               to="/planets/mercury"
-              className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px]  xl:mt-[22px]
+              className="text-xs text-white font-[spartan] font-bold tracking-[1px] uppercase leading-6  xl:mt-6
             "
             >
               mercury
@@ -32,7 +33,7 @@ export default function Header() {
           <div className="flex flex-col border-t-4 hover:border-[#419EBB]   border-[#070724]">
             <Link
               to="/planets/venus"
-              className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px] xl:mt-[22px]
+              className="text-xs text-white font-[spartan] font-bold tracking-[1px] uppercase leading-6  xl:mt-6
             "
             >
               venus
@@ -41,7 +42,7 @@ export default function Header() {
           <div className="flex flex-col border-t-4 hover:border-[#6D2ED5]   border-[#070724]">
             <Link
               to="/planets/earth"
-              className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px] xl:mt-[22px]"
+              className="text-xs text-white font-[spartan] font-bold tracking-[1px] uppercase leading-6  xl:mt-6"
             >
               earth
             </Link>
@@ -49,7 +50,7 @@ export default function Header() {
           <div className="flex flex-col border-t-4 hover:border-[#D14C32]   border-[#070724]">
             <Link
               to="/planets/mars"
-              className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px] xl:mt-[22px]"
+              className="text-xs text-white font-[spartan] font-bold tracking-[1px] uppercase leading-6  xl:mt-6"
             >
               mars
             </Link>
@@ -57,7 +58,7 @@ export default function Header() {
           <div className="flex flex-col border-t-4 hover:border-[#D83A34]   border-[#070724]">
             <Link
               to="/planets/jupiter"
-              className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px] xl:mt-[22px]"
+              className="text-xs text-white font-[spartan] font-bold tracking-[1px] uppercase leading-6  xl:mt-6"
             >
               jupiter
             </Link>
@@ -65,7 +66,7 @@ export default function Header() {
           <div className="flex flex-col border-t-4 hover:border-[#CD5120]   border-[#070724]">
             <Link
               to="/planets/saturn"
-              className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px] xl:mt-[22px]"
+              className="text-xs text-white font-[spartan] font-bold tracking-[1px] uppercase leading-6  xl:mt-6"
             >
               saturn
             </Link>
@@ -73,7 +74,7 @@ export default function Header() {
           <div className="flex flex-col border-t-4 hover:border-[#1EC1A2]   border-[#070724]">
             <Link
               to="/planets/uranus"
-              className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px] xl:mt-[22px]"
+              className="text-xs text-white font-[spartan] font-bold tracking-[1px] uppercase leading-6  xl:mt-6"
             >
               uranus
             </Link>
@@ -81,7 +82,7 @@ export default function Header() {
           <div className="flex flex-col border-t-4 hover:border-[#2D68F0]   border-[#070724]">
             <Link
               to="/planets/neptune"
-              className="text-[11px] text-white font-[spartan] font-bold tracking-[1px] uppercase leading-[25px] xl:mt-[22px]"
+              className="text-xs text-white font-[spartan] font-bold tracking-[1px] uppercase leading-6  xl:mt-6"
             >
               neptune
             </Link>
@@ -91,21 +92,22 @@ export default function Header() {
         <img
           onClick={show}
           src={buttonMobile}
-          className="button-for-list cursor-pointer md:hidden "
+          className=" cursor-pointer md:hidden "
           alt="button"
         />
       </div>
-      <div className="h-px opacity-20 mix-blend-normal  w-full bg-white"></div>
+      <div className="h-px opacity-20 mix-blend-normal  xl:top-16 xl:z-20 xl:absolute w-full bg-white"></div>
       {active ? (
-        <div className="md:hidden  fixed z-10 w-full  min-h-screen bg-[#070724] 	">
-          <div className="pt-[24px] px-[24px]  w-full ">
-            <div className="flex items-center flex-row justify-between w-full mt-[20px]">
+        <div className="  fixed top-0 z-10  w-full  h-screen md:hidden bg-[#070724] 	">
+          <div className=" px-6  w-full  ">
+          <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-16"></div>
+            <div className="flex items-center flex-row justify-between w-full mt-5  ">
               <div className="flex items-center justify-center">
-                <div className="bg-[#DEF4FC] w-[20px] h-[20px] rounded-full"></div>
+                <div className="bg-[#DEF4FC] w-5 h-5 rounded-full"></div>
                 <Link
                   to="/planets/mercury"
                   onClick={show}
-                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                  className="text-white font-[spartan] ml-6 font-bold tracking-[1.3px] uppercase text-base leading-6"
                 >
                   mercury
                 </Link>
@@ -114,14 +116,14 @@ export default function Header() {
                 <img onClick={show} src={arrow} alt="arrow button" />
               </Link>
             </div>
-            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-[23px]"></div>
-            <div className="flex items-center flex-row justify-between w-full mt-[20px]">
+            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-6"></div>
+            <div className="flex items-center flex-row justify-between w-full mt-5">
               <div className="flex items-center justify-center">
-                <div className="bg-[#F7CC7F] w-[20px] h-[20px] rounded-full"></div>
+                <div className="bg-[#F7CC7F] w-5 h-5 rounded-full"></div>
                 <Link
                   to="/planets/venus"
                   onClick={show}
-                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                  className="text-white font-[spartan] ml-6 font-bold tracking-[1.3px] uppercase text-base leading-6"
                 >
                   venus
                 </Link>
@@ -130,15 +132,15 @@ export default function Header() {
                 <img onClick={show} src={arrow} alt="arrow button" />
               </Link>
             </div>
-            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-[23px]"></div>
+            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-6"></div>
 
-            <div className="flex items-center flex-row justify-between w-full mt-[20px]">
+            <div className="flex items-center flex-row justify-between w-full mt-5">
               <div className="flex items-center justify-center">
-                <div className="bg-[#545BFE] w-[20px] h-[20px] rounded-full"></div>
+                <div className="bg-[#545BFE] w-5 h-5 rounded-full"></div>
                 <Link
                   to="/planets/earth"
                   onClick={show}
-                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                  className="text-white font-[spartan] ml-6 font-bold tracking-[1.3px] uppercase text-base leading-6"
                 >
                   earth
                 </Link>
@@ -147,15 +149,15 @@ export default function Header() {
                 <img onClick={show} src={arrow} alt="arrow button" />
               </Link>
             </div>
-            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-[23px]"></div>
+            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-6"></div>
 
-            <div className="flex items-center flex-row justify-between w-full mt-[20px]">
+            <div className="flex items-center flex-row justify-between w-full mt-5">
               <div className="flex items-center justify-center">
-                <div className="bg-[#FF6A45] w-[20px] h-[20px] rounded-full"></div>
+                <div className="bg-[#FF6A45] w-5 h-5 rounded-full"></div>
                 <Link
                   to="/planets/mars"
                   onClick={show}
-                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                  className="text-white font-[spartan] ml-6 font-bold tracking-[1.3px] uppercase text-base leading-6"
                 >
                   mars
                 </Link>
@@ -164,15 +166,15 @@ export default function Header() {
                 <img onClick={show} src={arrow} alt="arrow button" />
               </Link>
             </div>
-            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-[23px]"></div>
+            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-6"></div>
 
-            <div className="flex items-center flex-row justify-between w-full mt-[20px]">
+            <div className="flex items-center flex-row justify-between w-full mt-5">
               <div className="flex items-center justify-center">
-                <div className="bg-[#ECAD7A] w-[20px] h-[20px] rounded-full"></div>
+                <div className="bg-[#ECAD7A] w-5 h-5 rounded-full"></div>
                 <Link
                   to="/planets/jupiter"
                   onClick={show}
-                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                  className="text-white font-[spartan] ml-6 font-bold tracking-[1.3px] uppercase text-base leading-6"
                 >
                   jupiter
                 </Link>
@@ -181,15 +183,15 @@ export default function Header() {
                 <img onClick={show} src={arrow} alt="arrow button" />
               </Link>
             </div>
-            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-[23px]"></div>
+            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-6"></div>
 
-            <div className="flex items-center flex-row justify-between w-full mt-[20px]">
+            <div className="flex items-center flex-row justify-between w-full mt-5">
               <div className="flex items-center justify-center">
-                <div className="bg-[#FCCB6B] w-[20px] h-[20px] rounded-full"></div>
+                <div className="bg-[#FCCB6B] w-5 h-5 rounded-full"></div>
                 <Link
                   to="/planets/saturn"
                   onClick={show}
-                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                  className="text-white font-[spartan] ml-6 font-bold tracking-[1.3px] uppercase text-base leading-6"
                 >
                   saturn
                 </Link>
@@ -198,15 +200,15 @@ export default function Header() {
                 <img onClick={show} src={arrow} alt="arrow button" />
               </Link>
             </div>
-            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-[23px]"></div>
+            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-6"></div>
 
-            <div className="flex items-center flex-row justify-between w-full mt-[20px]">
+            <div className="flex items-center flex-row justify-between w-full mt-5">
               <div className="flex items-center justify-center">
-                <div className="bg-[#FCCB6B] w-[20px] h-[20px] rounded-full"></div>
+                <div className="bg-[#FCCB6B] w-5 h-5 rounded-full"></div>
                 <Link
                   to="/planets/uranus"
                   onClick={show}
-                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                  className="text-white font-[spartan] ml-6 font-bold tracking-[1.3px] uppercase text-base leading-6"
                 >
                   uranus
                 </Link>
@@ -215,19 +217,19 @@ export default function Header() {
                 <img onClick={show} src={arrow} alt="arrow button" />
               </Link>
             </div>
-            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-[23px]"></div>
+            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-6"></div>
 
-            <div className="flex items-center flex-row justify-between w-full mt-[20px]">
+            <div className="flex items-center flex-row justify-between w-full mt-5">
               <div
                 className="flex items-cent
           
           er justify-center"
               >
-                <div className="bg-[#497EFA] w-[20px] h-[20px] rounded-full"></div>
+                <div className="bg-[#497EFA] w-5 h-5 rounded-full"></div>
                 <Link
                   to="/planets/neptune"
                   onClick={show}
-                  className="text-white font-[spartan] ml-[25px] font-bold tracking-[1.3px] uppercase text-[15px] leading-[25px]"
+                  className="text-white font-[spartan] ml-6 font-bold tracking-[1.3px] uppercase text-base leading-6"
                 >
                   neptune
                 </Link>
@@ -236,7 +238,7 @@ export default function Header() {
                 <img onClick={show} src={arrow} alt="arrow button" />
               </Link>
             </div>
-            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-[23px]"></div>
+            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-6"></div>
           </div>
         </div>
       ) : null}
