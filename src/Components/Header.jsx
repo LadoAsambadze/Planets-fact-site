@@ -11,9 +11,9 @@ export default function Header() {
   function show() {
     setActive(!active);
     if (active) {
-      setMenu(close);
-    } else {
       setMenu(buttonMobile);
+    } else {
+      setMenu(close);
     }
   }
 

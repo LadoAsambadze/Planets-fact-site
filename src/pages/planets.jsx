@@ -89,7 +89,7 @@ export default function Main() {
           <div className="w-full flex justify-center   md:flex-row md:justify-between xl:flex-row ">
             <div className=" hidden  xl:w-full xl:h-[400px] xl:flex xl:flex-col xl:justify-center xl:items-center">
               <img
-                className="   "
+                className=" w-1/2  "
                 src={
                   active === "overview"
                     ? planet.images.planet
@@ -101,7 +101,7 @@ export default function Main() {
                 }
               />
               <img
-                className="w-40 absolute translate-y-3/4"
+                className="w-40 absolute translate-y-3/4 "
                 src={active === "surface" ? planet.images.geology : null}
               />
             </div>
