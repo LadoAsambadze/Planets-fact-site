@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
 import buttonMobile from "../../public/assets/icon-hamburger.svg";
+import close from "../../public/assets/icon-close.svg";
 import { useState, useEffect } from "react";
 import arrow from "../../public/assets/icon-chevron.svg";
 
 export default function Header() {
   const [active, setActive] = useState(false);
+  const [menu, setMenu] = useState(buttonMobile);
 
   function show() {
     setActive(!active);
+    if (active) {
+      setMenu(close);
+    } else {
+      setMenu(buttonMobile);
+    }
   }
 
   return (
@@ -91,7 +98,7 @@ export default function Header() {
 
         <img
           onClick={show}
-          src={buttonMobile}
+          src={menu}
           className=" cursor-pointer md:hidden "
           alt="button"
         />
@@ -100,7 +107,7 @@ export default function Header() {
       {active ? (
         <div className="  fixed top-0 z-10  w-full  h-screen md:hidden bg-[#070724] 	">
           <div className=" px-6  w-full  ">
-          <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-16"></div>
+            <div className="h-px opacity-10 mix-blend-normal w-full bg-white mt-16"></div>
             <div className="flex items-center flex-row justify-between w-full mt-5  ">
               <div className="flex items-center justify-center">
                 <div className="bg-[#DEF4FC] w-5 h-5 rounded-full"></div>
