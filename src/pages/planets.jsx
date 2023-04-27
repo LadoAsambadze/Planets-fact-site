@@ -66,7 +66,7 @@ export default function Main() {
       </div>
       <div className="h-px bg-white opacity-20 w-full md:hidden"></div>
 
-      <div className="flex flex-col absolute justify-center items-center px-6 pb-9 xl:px-40 xl:pt-4 xl:pb-[56px] xl:flex-row xl:justify-start xl:items-start ">
+      <div className="flex flex-col absolute justify-center items-center px-6 pb-9 xl:px-40 xl:pt-20 xl:pb-[56px] xl:flex-row xl:justify-start xl:items-start ">
         <div className="h-[304px] xl:hidden md:h-[460px] flex flex-col justify-center items-center ">
           <img
             className=" w-1/2 md:w-3/4 xl:hidden  "

@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <>
       <div
-        className="flex w-full justify-between md:justify-center md:flex-col items-center px-6 md:px-14 pb-4 md:pb-5 xl:pt-0
+        className="flex w-full justify-between md:justify-center md:flex-col items-center px-6 pt-4 md:px-14 pb-4 md:pb-5 xl:pt-0
       xl:flex-row  xl:pr-10 xl:pb-7 xl:pl-8 xl:items-center  xl:justify-evenly  z-20 md:pt-8 relative"
         style={{ position: active ? "fixed" : "relative" }}
       >
